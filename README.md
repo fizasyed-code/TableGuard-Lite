@@ -156,6 +156,7 @@ TableGuard-Lite combines natural-language instructions, three RGB camera views,
 a 12-joint robot state, SmolVLA action prediction, a learned action adapter,
 runtime safety supervision, and closed-loop replanning for dual SO-101
 manipulation in MuJoCo.
+
 ## Architecture
 
 ```text
@@ -177,7 +178,18 @@ Dual SO-101 Robot Execution
           ↺
    Closed-Loop Replanning
 ```
+# TableGuard-Lite
 
+### Safe Closed-Loop Bimanual VLA Control for Robotic Table Setting
+
+<p align="center">
+  <img src="assets/cover.png" alt="TableGuard-Lite" width="1000"/>
+</p>
+
+**TableGuard-Lite** is a safety-aware closed-loop Vision-Language-Action system
+for bimanual robotic table setting using SmolVLA, three-camera perception,
+dual SO-101 manipulation in MuJoCo, recovery-oriented learning, runtime safety
+supervision, and OpenVINO deployment.
 ---
 
 ## Repository Structure

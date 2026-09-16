@@ -183,7 +183,7 @@ Dual SO-101 Robot Execution
 ### Safe Closed-Loop Bimanual VLA Control for Robotic Table Setting
 
 <p align="center">
-  <img src="assets/cover.png" alt="TableGuard-Lite" width="1000"/>
+  <img src="assets/cover-image.png" alt="TableGuard-Lite" width="1000"/>
 </p>
 
 **TableGuard-Lite** is a safety-aware closed-loop Vision-Language-Action system

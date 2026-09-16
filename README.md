@@ -146,7 +146,16 @@ The final 59X2 deployment path successfully verified:
 For transparency, the final 59X2 OpenVINO checkpoint did **not** improve CPU latency over its PyTorch baseline. A separate earlier verified checkpoint showed approximately **1.39×** median CPU speedup. These results are kept distinct.
 
 ---
+## System Architecture
 
+<p align="center">
+  <img src="docs/architecture.png" alt="TableGuard-Lite System Architecture" width="900"/>
+</p>
+
+TableGuard-Lite combines natural-language instructions, three RGB camera views,
+a 12-joint robot state, SmolVLA action prediction, a learned action adapter,
+runtime safety supervision, and closed-loop replanning for dual SO-101
+manipulation in MuJoCo.
 ## Architecture
 
 ```text

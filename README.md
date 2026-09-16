@@ -148,27 +148,6 @@ The final 59X2 deployment path successfully verified:
 For transparency, the final 59X2 OpenVINO checkpoint did **not** improve CPU latency over its PyTorch baseline. A separate earlier verified checkpoint showed approximately **1.39×** median CPU speedup. These results are kept distinct.
 
 ---
-
-## Architecture
-
-```text
-Natural-Language Instruction
-          +
-3 RGB Cameras + 12-Joint State
-          ↓
-       SmolVLA
-          ↓
- Short-Horizon Action Chunk
-          ↓
- Learned Action Adapter
-          ↓
-   Safety Supervisor
-          ↓
-Dual SO-101 MuJoCo Execution
-          ↓
- New Visual Observation
-          ↺
-   Closed-Loop Replanning
 ```
 ## System Architecture
 

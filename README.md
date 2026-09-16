@@ -1,12 +1,10 @@
 # TableGuard-Lite
-Safety-aware closed-loop bimanual VLA control with SmolVLA, MuJoCo, recovery learning, and OpenVINO deployment.
-# TableGuard-Lite
 
 ## Safe Closed-Loop Bimanual VLA Control for Robotic Table Setting
 
 TableGuard-Lite is a safety-aware closed-loop Vision-Language-Action (VLA) system for bimanual robotic table setting. It combines natural-language instructions, three RGB camera views, a 12-joint robot state, SmolVLA action prediction, runtime safety supervision, recovery-oriented learning, a learned residual action adapter, and OpenVINO deployment.
 
-The project focuses on a practical Physical AI question:-
+The project focuses on a practical Physical AI question:
 
 > How can a language-conditioned bimanual robot execute learned actions while detecting, containing, and learning from unsafe closed-loop behavior?
 
@@ -148,17 +146,29 @@ The final 59X2 deployment path successfully verified:
 For transparency, the final 59X2 OpenVINO checkpoint did **not** improve CPU latency over its PyTorch baseline. A separate earlier verified checkpoint showed approximately **1.39×** median CPU speedup. These results are kept distinct.
 
 ---
+
+## Architecture
+
+```text
+Natural-Language Instruction
+          +
+3 RGB Cameras + 12-Joint State
+          ↓
+       SmolVLA
+          ↓
+ Short-Horizon Action Chunk
+          ↓
+ Learned Action Adapter
+          ↓
+   Safety Supervisor
+          ↓
+Dual SO-101 Robot Execution
+          ↓
+ New Visual Observation
+          ↺
+   Closed-Loop Replanning
 ```
-## System Architecture
 
-<p align="center">
-  <img src="docs/architecture.png" width="900">
-</p>
-
-TableGuard-Lite combines natural-language instructions, three RGB camera views,
-and a 12-joint robot state with SmolVLA. The predicted action chunk is refined
-by a learned residual action adapter and validated by a runtime safety supervisor
-before execution. Fresh observations are then used for closed-loop replanning.
 ---
 
 ## Repository Structure

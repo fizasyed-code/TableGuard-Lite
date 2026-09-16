@@ -6,7 +6,7 @@ Safety-aware closed-loop bimanual VLA control with SmolVLA, MuJoCo, recovery lea
 
 TableGuard-Lite is a safety-aware closed-loop Vision-Language-Action (VLA) system for bimanual robotic table setting. It combines natural-language instructions, three RGB camera views, a 12-joint robot state, SmolVLA action prediction, runtime safety supervision, recovery-oriented learning, a learned residual action adapter, and OpenVINO deployment.
 
-The project focuses on a practical Physical AI question:
+The project focuses on a practical Physical AI question:-
 
 > How can a language-conditioned bimanual robot execute learned actions while detecting, containing, and learning from unsafe closed-loop behavior?
 

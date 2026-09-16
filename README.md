@@ -164,13 +164,22 @@ Natural-Language Instruction
           ↓
    Safety Supervisor
           ↓
-Dual SO-101 Robot Execution
+Dual SO-101 MuJoCo Execution
           ↓
  New Visual Observation
           ↺
    Closed-Loop Replanning
 ```
+## System Architecture
 
+<p align="center">
+  <img src="docs/architecture.png" width="900">
+</p>
+
+TableGuard-Lite combines natural-language instructions, three RGB camera views,
+and a 12-joint robot state with SmolVLA. The predicted action chunk is refined
+by a learned residual action adapter and validated by a runtime safety supervisor
+before execution. Fresh observations are then used for closed-loop replanning.
 ---
 
 ## Repository Structure

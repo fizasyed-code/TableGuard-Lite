@@ -114,7 +114,40 @@ The final learned rollout:
 This rollout is evidence of closed-loop learned control and active safety supervision, not full learned task completion.
 
 ---
+## Quantitative Results
 
+Recovery-oriented training progressively improved safe closed-loop execution
+while keeping the original safety constraints active.
+
+<p align="center">
+  <img src="results/safe_execution_progress.png"
+       alt="Safe closed-loop execution progress"
+       width="850"/>
+</p>
+
+### Closed-Loop Safety Progress
+
+| Evaluation Stage | Safe Execution Before Guard |
+|---|---:|
+| Initial full-task rollout | **7.77 s** |
+| Anti-regression repair | **11.77 s** |
+| Actual-state recovery | **14.32 s** |
+| Learned residual action adapter | **15.07 s** |
+
+**Overall improvement:** approximately **94%** from the initial learned rollout to the final learned evaluation.
+
+### Learned Action Adapter
+
+- Expert/reference sequences: **556**
+- Actual closed-loop recovery sequences: **48**
+- Step-level training examples: **12,080**
+- Residual RMSE before adapter: **0.5449**
+- Residual RMSE after adapter: **0.2529**
+- RMSE reduction: **53.6%**
+- Final learned rollout policy calls: **302**
+
+> The final full learned bimanual task was not completed successfully; the safety supervisor stopped execution after detecting unexpected contact.
+> 
 ## Reference Task
 
 A complete expert/scripted reference sequence successfully performs:
